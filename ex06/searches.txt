@@ -1,0 +1,10 @@
+scar
+Crookshanks
+Horcrux
+		
+broom wand cape
+
+
+search "Horcrux" ranking_dict_file.pkl words_dict_file.pkl 4
+
+words_dict https://www.cs.huji.ac.il/~intro2cs1/ex6/wiki/ "small_index.txt" words_dict_file.pkl

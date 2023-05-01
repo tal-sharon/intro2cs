@@ -1,0 +1,15 @@
+def relevant_pages(query_words_lst, ranking_dict_file, words_dict_file):
+    relevant_pages_rank = []
+    reversed_rank_dict = dict()
+    for page in ranking_dict_file:
+        has_all_words = is_query_in_page(page, query_words_lst, words_dict_file)
+        if has_all_words:
+            reversed_rank_dict[ranking_dict_file[page]] = page
+            relevant_pages_rank.append(ranking_dict_file[page])
+    return relevant_pages_rank, reversed_rank_dict
+
+   relevant_pages_rank = sorted(relevant_pages_rank)
+   relevant_pages_rank = relevant_pages_rank[-1:(-1 * max_results) - 1:-1]
+    max_results_lst = []
+    for page in range(max_results):
+        max_results_lst.append(reversed_rank_dict[relevant_pages_rank[page]])
